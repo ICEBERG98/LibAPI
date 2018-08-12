@@ -1,0 +1,7 @@
+{
+    "env":{
+        "port": "3001",
+        "MONGO_ATLAS_UNAME":"LibAPI",
+        "MONGO_ATLAS_PWD": "LibAPI"
+    }
+}
