@@ -6,7 +6,9 @@ const mongoose = require('mongoose');
 const bookRoutes= require('./api/routes/books');
 const issueRoutes=require('./api/routes/issues');
 
-mongoose.connect('mongodb://', +process.env.MONGO_ATLAS_UNAME, ':', +process.env.MONGO_ATLAS_PWD, '@libraryapi-shard-00-00-krtfz.mongodb.net:27017,libraryapi-shard-00-01-krtfz.mongodb.net:27017,libraryapi-shard-00-02-krtfz.mongodb.net:27017/test?ssl=true&replicaSet=LibraryAPI-shard-0&authSource=admin&retryWrites=true');
+mongoose.connect('mongodb://LibAPI:LibAPI@libraryapi-shard-00-00-krtfz.mongodb.net:27017,libraryapi-shard-00-01-krtfz.mongodb.net:27017,libraryapi-shard-00-02-krtfz.mongodb.net:27017/test?ssl=true&replicaSet=LibraryAPI-shard-0&authSource=admin&retryWrites=true', {
+    useNewUrlParser: true
+});
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
